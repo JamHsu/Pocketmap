@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="PocketModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Pocket Map</title>
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/stylesheets/extend.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-simple-chat/src/css/style.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-simple-chat/src/css/themes.css">
+    <link rel="stylesheet" href="bower_components/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="bower_components/Leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="bower_components/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <!--<script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>-->
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="bower_components/leaflet/leaflet-src.js"></script>
+    <script type="text/javascript" src="bower_components/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+    <script type="text/javascript" src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+    <!--<script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>-->
+    <!--<script type="text/javascript" src="bower_components/angular-file-upload/dist/angular-file-upload.min.js"></script>-->
+    <!--<script type="text/javascript" src="bower_components/ng-imgur/dist/ng-imgur.js"></script>-->
+    <!--<script src="bower_components/angularjs-scroll-glue/src/scrollglue.js"></script>-->
+
+    <script src="bower_components/angular-bootstrap-simple-chat/src/scripts/index.js"></script>
+    <script type="text/javascript" src="assets/scripts/controller/pocket_module.js"></script>
+    <script type="text/javascript" src="assets/scripts/controller/osm-map-controller.js"></script>
+
+</head>
+<body>
+<div class="container header" ng-controller="OsmMapController as osmMapCtrl">
+    <div class="row">
+        <div>
+            Restaurant:
+            <a ng-href="{{restaurant.url}}" target="_blank">
+                {{restaurant.name}}
+            </a>
+            <img ng-src="{{restaurant.imgUrl}}" style="width:100px; height:100px">
+        </div>
+    </div>
+    <div class="row">
+        <div class="map-section">
+            <leaflet center="center"
+                     layers="layers"
+                     markers = "markers"
+                     height="500"
+                     controls="mapControls"
+                     width="100%">
+            </leaflet>
+        </div>
+    </div>
+</div>
+</body>
+</html>
