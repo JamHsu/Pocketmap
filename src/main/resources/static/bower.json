@@ -1,16 +1,13 @@
 {
   "name": "bower",
-  "version": "0.0.0",
+  "version": "0.1",
   "authors": [
-    "Fisher <yutsengwei@gmail.com>"
+    "Jam <q44220123@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "bower_components"
   ],
   "dependencies": {
     "jquery": "2.1.4",
@@ -23,6 +20,7 @@
     "angular-file-upload": "2.1.1",
     "angular-bootstrap-simple-chat": "~0.0.2",
     "angular-animate": "1.4.3",
-    "angular-leaflet-directive": "~1.02"
+    "angular-leaflet-directive": "~0.10.0"
+    "leaflet.locatecontrol": "~0.60.0"
   }
 }
