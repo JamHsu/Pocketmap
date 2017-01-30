@@ -9,6 +9,7 @@
     function OsmMapController($scope, $http, $window, leafletMarkerEvents) {
 
         var me = this;
+
         $scope.layers = {
             baselayers: {
                 osm: {
@@ -37,8 +38,19 @@
         };
 
         $scope.mapControls = {
-            scale: true
-        }
+            scale: true,
+            custom: [
+                L.control.locate({
+                    strings: {
+                        title: 'Show current location.'
+                    },
+                    drawCircle: false,
+                    keepCurrentZoomLevel: true
+                })
+            ]
+        };
+
+
         $scope.$on('leafletDirectiveMarker.click', function(event, args){
             $scope.restaurant = {};
             $scope.restaurant.name = args.model.name;
@@ -50,14 +62,14 @@
         $window.navigator.geolocation.getCurrentPosition(
             function (position) {
                 console.log(position)
-                angular.extend($scope, {
-                    center: {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude,
-                        zoom: 12
-                    }
-
-                });
+                // angular.extend($scope, {
+                //     center: {
+                //         lat: position.coords.latitude,
+                //         lng: position.coords.longitude,
+                //         zoom: 12
+                //     }
+                //
+                // });
 
             },
             function (err) {
